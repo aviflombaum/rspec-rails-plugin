@@ -1,18 +1,12 @@
 {
   "name": "rspec-rails",
-  "version": "2.4.0",
-  "description": "RSpec testing patterns and agents for Ruby on Rails applications. Comprehensive guidance for model specs, request specs, system specs, ActiveJob, ActionMailer, ActiveStorage, ActionCable, and testing strategies.",
+  "version": "2.5.0",
+  "description": "RSpec testing patterns for Rails applications",
   "author": {
     "name": "Avi Flombaum",
     "url": "https://avi.nyc"
   },
   "repository": "https://github.com/aviflombaum/rspec-rails-plugin",
   "license": "MIT",
-  "keywords": [
-    "rspec",
-    "rails",
-    "testing",
-    "ruby",
-    "tdd"
-  ]
+  "keywords": ["rspec", "rails", "testing", "ruby", "tdd"]
 }

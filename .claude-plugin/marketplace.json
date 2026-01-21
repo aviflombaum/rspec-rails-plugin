@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "rspec-rails",
-      "version": "2.4.0",
+      "version": "2.5.0",
       "description": "RSpec testing patterns and agents for Ruby on Rails applications. Comprehensive guidance for model specs, request specs, system specs, ActiveJob, ActionMailer, ActiveStorage, ActionCable, and testing strategies.",
       "author": {
         "name": "Avi Flombaum",
