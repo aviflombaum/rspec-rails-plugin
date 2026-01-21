@@ -1,9 +1,11 @@
 {
   "name": "rspec-rails",
   "description": "RSpec testing patterns and agents for Ruby on Rails applications. Comprehensive guidance for model specs, request specs, system specs, ActiveJob, ActionMailer, ActiveStorage, ActionCable, and testing strategies.",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": {
     "name": "Avi Flombaum",
     "url": "https://avi.nyc"
-  }
+  },
+  "skills": "./skills/",
+  "agents": "./agents/"
 }
