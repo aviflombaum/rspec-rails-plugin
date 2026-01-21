@@ -1,6 +1,8 @@
 ---
-name: rspec-rails
+name: rspec
 description: RSpec testing patterns for Rails applications. Use when writing tests, understanding spec types, or implementing testing strategies. Covers model specs, request specs, system specs, ActiveJob, ActionMailer, ActiveStorage, ActionCable, fixtures, and isolation patterns.
+user-invocable: true
+argument-hint: [spec-type]
 ---
 
 # RSpec Rails Testing

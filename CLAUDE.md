@@ -10,7 +10,7 @@ rspec-rails-plugin/
 │   ├── marketplace.json     # Marketplace registry
 │   └── plugin.json          # Plugin metadata
 ├── skills/
-│   └── rspec-rails/
+│   └── rspec/
 │       └── SKILL.md         # Testing patterns and guidance
 ├── agents/
 │   └── rspec-test-writer.md # Subagent for isolated test writing
@@ -30,7 +30,7 @@ The main skill containing:
 - Fixture best practices
 - DRY patterns (shared examples, custom matchers)
 
-**Invocation**: `/rspec-rails` or auto-detected when working on Rails tests
+**Invocation**: `/rspec-rails:rspec` or auto-detected when working on Rails tests
 
 ### Agent: `rspec-test-writer`
 
