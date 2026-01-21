@@ -7,7 +7,8 @@ This is a Claude Code plugin for RSpec Rails testing.
 ```
 rspec-rails-plugin/
 ├── .claude-plugin/
-│   └── marketplace.json     # Plugin manifest
+│   ├── marketplace.json     # Marketplace registry
+│   └── plugin.json          # Plugin metadata
 ├── skills/
 │   └── rspec-rails/
 │       └── SKILL.md         # Testing patterns and guidance
