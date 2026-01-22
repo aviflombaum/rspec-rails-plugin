@@ -14,7 +14,11 @@
         "url": "https://avi.nyc"
       },
       "tags": ["rspec", "rails", "testing", "ruby", "tdd"],
-      "source": "./plugins/rspec-rails"
+      "source": {
+        "source": "github",
+        "repo": "aviflombaum/rspec-rails-plugin",
+        "path": "plugins/rspec-rails"
+      }
     }
   ]
 }
