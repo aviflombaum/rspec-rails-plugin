@@ -4,21 +4,32 @@ description: This skill should be used when writing RSpec tests for Rails applic
 argument-hint: "[model|request|system|job|mailer|channel] ClassName"
 ---
 
-# RSpec Rails Testing
+# RSpec Test Writer
 
-Comprehensive RSpec testing patterns for Rails applications. Use fixtures, not factories.
+You are now writing RSpec tests for a Rails application. Follow this workflow exactly.
+
+## Workflow
+
+1. **Parse the request** - Identify what needs testing (model, controller, job, etc.)
+2. **Find the source file** - Use Glob/Grep to locate the code to test
+3. **Read the code** - Understand validations, methods, associations, behavior
+4. **Check existing fixtures** - Look in `spec/fixtures/*.yml` for test data
+5. **Determine spec type** - Use the decision framework below
+6. **Write the spec file** - Follow the patterns in this document
+7. **Run with `--fail-fast`** - Execute: `bundle exec rspec <spec_file> --fail-fast`
+8. **Fix failures** - Iterate until green
 
 ## Decision Framework
 
 ```
 What am I testing?
-├── Data & Business Logic    → Model specs
-├── HTTP & Controllers       → Request specs
-├── User Interface           → System specs
-├── Background Processing    → ActiveJob specs
-├── Email                    → ActionMailer specs
-├── File Uploads             → ActiveStorage specs
-├── Real-time Features       → ActionCable specs
+├── Data & Business Logic    → Model specs (spec/models/)
+├── HTTP & Controllers       → Request specs (spec/requests/)
+├── User Interface           → System specs (spec/system/)
+├── Background Processing    → ActiveJob specs (spec/jobs/)
+├── Email                    → ActionMailer specs (spec/mailers/)
+├── File Uploads             → ActiveStorage specs (spec/models/)
+├── Real-time Features       → ActionCable specs (spec/channels/)
 └── External Services        → Use VCR + isolation patterns
 ```
 
@@ -32,9 +43,13 @@ What am I testing?
 6. **One outcome per example** - focused, clear tests
 7. **Modern syntax** - `expect().to`, not `should`
 
-## Spec Types
+---
+
+## Spec Type Patterns
 
 ### Model Specs (`type: :model`)
+
+Location: `spec/models/<model_name>_spec.rb`
 
 Test validations, scopes, and instance/class methods.
 
@@ -61,6 +76,8 @@ end
 ```
 
 ### Request Specs (`type: :request`)
+
+Location: `spec/requests/<resource_name>_spec.rb`
 
 Test HTTP routing, authentication, authorization, responses.
 
@@ -91,6 +108,8 @@ end
 ```
 
 ### System Specs (`type: :system`)
+
+Location: `spec/system/<feature_name>_spec.rb`
 
 Test full user flows through the browser. Use `rack_test` for non-JS, `cuprite` for JS.
 
@@ -123,6 +142,8 @@ end
 
 ### ActiveJob Specs (`type: :job`)
 
+Location: `spec/jobs/<job_name>_spec.rb`
+
 Test job logic with `perform_now`, queuing with `perform_later`.
 
 ```ruby
@@ -150,6 +171,8 @@ end
 
 ### ActionMailer Specs (`type: :mailer`)
 
+Location: `spec/mailers/<mailer_name>_spec.rb`
+
 Test email headers, body content, and delivery.
 
 ```ruby
@@ -171,6 +194,8 @@ end
 ```
 
 ### ActionCable Specs (`type: :channel`)
+
+Location: `spec/channels/<channel_name>_spec.rb`
 
 Test channel subscriptions and broadcasts.
 
@@ -194,6 +219,8 @@ end
 ```
 
 ### ActiveStorage Specs
+
+Location: `spec/models/<model_name>_spec.rb` (with attachment tests)
 
 Test file uploads and attachments.
 
@@ -229,6 +256,8 @@ RSpec.describe "Recipe Photos", type: :system do
   end
 end
 ```
+
+---
 
 ## Isolation Patterns
 
@@ -266,6 +295,8 @@ before do
 end
 ```
 
+---
+
 ## Fixtures Best Practices
 
 ```yaml
@@ -289,6 +320,8 @@ published:
 ```
 
 Access in specs: `users(:alice)`, `recipes(:published)`
+
+---
 
 ## DRY Patterns
 
@@ -323,7 +356,11 @@ end
 expect(post).to be_recent
 ```
 
+---
+
 ## Quality Checklist
+
+Before finishing, verify:
 
 - [ ] Using correct spec type?
 - [ ] One outcome per example?
@@ -333,3 +370,4 @@ expect(post).to be_recent
 - [ ] No testing of Rails internals?
 - [ ] External services isolated with VCR?
 - [ ] Example names describe behavior, not implementation?
+- [ ] Tests pass with `bundle exec rspec <file> --fail-fast`?

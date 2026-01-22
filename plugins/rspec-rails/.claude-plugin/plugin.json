@@ -1,6 +1,6 @@
 {
   "name": "rspec-rails",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "RSpec testing patterns and test-writing agent for Rails applications",
   "author": {
     "name": "Avi Flombaum",
