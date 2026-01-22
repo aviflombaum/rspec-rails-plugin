@@ -1,26 +1,21 @@
 # RSpec Rails Plugin Marketplace
 
-A Claude Code plugin marketplace containing RSpec testing tools for Ruby on Rails applications.
+## Deprecated
 
-## Installation
+This repository has been deprecated. The rspec-writer plugin is now available through the [claude-code-in-avinyc](https://github.com/aviflombaum/claude-code-in-avinyc) marketplace.
+
+### Migration Instructions
 
 ```bash
-# Add the marketplace
-/plugin marketplace add aviflombaum/rspec-rails-plugin
+# Remove this marketplace (if installed)
+/plugin marketplace remove aviflombaum/rspec-rails-plugin
 
-# Install the plugin
-/plugin install rspec-rails
+# Add the new marketplace
+/plugin marketplace add aviflombaum/claude-code-in-avinyc
+
+# Install the rspec-writer plugin
+/plugin install rspec-writer
 ```
-
-## Available Plugins
-
-| Plugin | Description |
-|--------|-------------|
-| [rspec-rails](./plugins/rspec-rails) | RSpec testing patterns, decision frameworks, and an AI-powered test writer for Rails |
-
-## License
-
-MIT License - see [LICENSE](./plugins/rspec-rails/LICENSE) for details.
 
 ## Author
 
