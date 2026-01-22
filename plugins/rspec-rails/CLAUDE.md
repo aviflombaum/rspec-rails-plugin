@@ -9,7 +9,7 @@ rspec-rails/
 ├── .claude-plugin/
 │   └── plugin.json           # Plugin metadata
 ├── skills/
-│   └── rspec/
+│   └── write-test/
 │       └── SKILL.md          # Testing patterns and guidance
 ├── agents/
 │   └── rspec-test-writer.md  # Subagent for parallel test writing
@@ -20,15 +20,19 @@ rspec-rails/
 
 ## Components
 
-### Skill: `rspec`
+### Skill: `write-test`
 
-Invocation: `/rspec-rails:rspec`
+Invocation: `/rspec-rails:write-test`
 
 Contains decision framework for spec type selection, code patterns for all spec types (model, request, system, job, mailer, channel, storage), isolation patterns (VCR, time helpers, doubles), fixture best practices, and DRY patterns.
 
+**Argument hint:** `[model|request|system|job|mailer|channel] ClassName`
+
+**Auto-invoked when:** User asks to "write tests", "add specs", or asks Rails testing questions.
+
 ### Agent: `rspec-test-writer`
 
-A subagent for isolated, parallel test writing. Delegates via Task tool.
+A subagent for isolated, parallel test writing. Delegates via Task tool. Preloads the `write-test` skill.
 
 ## Core Testing Principles
 

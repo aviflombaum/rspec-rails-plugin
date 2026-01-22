@@ -1,6 +1,7 @@
 ---
-name: rspec
-description: This skill should be used when writing RSpec tests for Rails applications. It applies when writing model specs, request specs, system specs, job specs, mailer specs, channel specs, or storage specs. Triggers on test writing, spec creation, or Rails testing questions.
+name: write-test
+description: This skill should be used when writing RSpec tests for Rails applications. It applies when writing model specs, request specs, system specs, job specs, mailer specs, channel specs, or storage specs. Triggers on test writing, spec creation, "write tests", "add specs", or Rails testing questions.
+argument-hint: "[model|request|system|job|mailer|channel] ClassName"
 ---
 
 # RSpec Rails Testing

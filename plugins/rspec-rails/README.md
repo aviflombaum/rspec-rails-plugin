@@ -6,7 +6,7 @@ A Claude Code plugin providing comprehensive RSpec testing patterns and an AI-po
 
 | Component | Type | Purpose |
 |-----------|------|---------|
-| `rspec` | Skill | Testing patterns, decision framework, code examples |
+| `write-test` | Skill | Testing patterns, decision framework, code examples |
 | `rspec-test-writer` | Agent | Isolated test writing with parallel execution |
 
 ## Installation
@@ -31,16 +31,20 @@ git clone https://github.com/aviflombaum/rspec-rails-plugin.git ~/.claude/plugin
 
 ## Usage
 
-### Skill: `/rspec-rails:rspec`
+### Skill: `/rspec-rails:write-test`
 
 The skill provides testing patterns and guidance. Claude will automatically invoke it when you're working on Rails tests, or you can invoke it manually:
 
 ```
-/rspec-rails:rspec
+/rspec-rails:write-test
+
+# With argument hint:
+/rspec-rails:write-test model User
+/rspec-rails:write-test request RecipesController
 
 # Or ask naturally:
-"How should I test this controller?"
-"What's the pattern for testing ActiveJob?"
+"Write tests for the User model"
+"Add specs for the orders controller"
 "Help me write a system spec for user registration"
 ```
 
@@ -145,15 +149,15 @@ RSpec.describe "User Registration", type: :system do
 end
 ```
 
-## Migration from v1
+## Migration from v1/v2
 
 If you were using the individual agent files (v1), the functionality is now consolidated:
 
-| v1 (Agents) | v2 (Plugin) |
-|-------------|-------------|
+| v1/v2 | v3 (Current) |
+|-------|--------------|
 | 11 separate agent files | 1 skill + 1 agent |
 | ~75KB always loaded | ~8KB, loads on-demand |
-| `@rspec-model-specs-agent` | `/rspec-rails:rspec` (patterns) |
+| `/rspec-rails:rspec` | `/rspec-rails:write-test` (patterns) |
 | `@rspec-rails-agent` | `@rspec-test-writer` (isolated work) |
 
 ## Contributing

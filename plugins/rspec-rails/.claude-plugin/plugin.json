@@ -1,12 +1,12 @@
 {
   "name": "rspec-rails",
-  "version": "2.5.0",
-  "description": "RSpec testing patterns for Rails applications",
+  "version": "3.0.0",
+  "description": "RSpec testing patterns and test-writing agent for Rails applications",
   "author": {
     "name": "Avi Flombaum",
     "url": "https://avi.nyc"
   },
   "repository": "https://github.com/aviflombaum/rspec-rails-plugin",
   "license": "MIT",
-  "keywords": ["rspec", "rails", "testing", "ruby", "tdd"]
+  "keywords": ["rspec", "rails", "testing", "ruby", "tdd", "specs"]
 }
